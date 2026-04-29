@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOBY Criminal | Defesa Penal em São Paulo</title>
+<meta name="description" content="MOBY Criminal — escritório especializado em defesa penal em São Paulo. Flagrante, habeas corpus, audiência de custódia. Atendimento 24h.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:       #0c0c0b;
+  --bg2:      #111110;
+  --bg3:      #161614;
+  --line:     rgba(255,255,255,0.07);
+  --line2:    rgba(255,255,255,0.13);
+  --white:    #f0ede6;
+  --muted:    #6b6b65;
+  --mid:      #9a9990;
+  --accent:   #c8a96e;
+  --accent2:  rgba(200,169,110,0.12);
+  --red:      #a83232;
+  --red-dim:  rgba(168,50,50,0.1);
+  --wpp:      #25D366;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── NOISE OVERLAY ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.022;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* ─── TOPBAR ─── */
+.topbar {
+  border-bottom: 1px solid var(--line);
+  padding: 13px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background: rgba(12,12,11,0.94);
+  backdrop-filter: blur(16px);
+  z-index: 99;
+}
+
+.logo-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.logo-moby {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 200;
+  font-size: 1.05rem;
+  letter-spacing: 0.28em;
+  color: var(--white);
+  text-transform: uppercase;
+}
+.logo-sep {
+  width: 1px;
+  height: 14px;
+  background: var(--line2);
+}
+.logo-branch {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.nav a {
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav a:hover { color: var(--white); }
+
+.nav-cta {
+  font-size: 0.7rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.14em;
+  color: var(--accent) !important;
+  border: 1px solid rgba(200,169,110,0.3);
+  padding: 8px 18px;
+  border-radius: 2px;
+  transition: background 0.2s, color 0.2s !important;
+}
+.nav-cta:hover {
+  background: var(--accent2) !important;
+  color: var(--accent) !important;
+}
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 96vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left {
+  padding: 120px 64px 80px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--line);
+  position: relative;
+}
+
+.hero-right {
+  padding: 120px 48px 80px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+}
+
+/* vertical rule decoration */
+.hero-right::before {
+  content: '';
+  position: absolute;
+  top: 80px;
+  right: 48px;
+  bottom: 80px;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--line2) 30%, var(--line2) 70%, transparent);
+}
+
+.hero-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--muted);
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  margin-bottom: 40px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-desc {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--mid);
+  line-height: 1.85;
+  max-width: 360px;
+  margin-bottom: 56px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 300px;
+}
+
+.btn-wpp {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: var(--wpp);
+  color: #fff;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.btn-wpp:hover { opacity: 0.88; }
+.btn-wpp svg { flex-shrink: 0; }
+
+.btn-tel {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border: 1px solid var(--line2);
+  color: var(--mid);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-tel:hover { border-color: var(--line2); color: var(--white); }
+
+/* right col */
+.hero-partners {
+  margin-bottom: auto;
+  padding-top: 40px;
+}
+.hero-partners-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.partners-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.partner-item {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.partner-item:first-child { border-top: 1px solid var(--line); }
+.partner-name {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 200;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  color: var(--white);
+}
+.partner-role {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hero-24h {
+  margin-top: 64px;
+  padding: 28px 0 0;
+  border-top: 1px solid var(--line);
+}
+.hero-24h-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.hero-24h-value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1;
+}
+.hero-24h-sub {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 6px;
+  letter-spacing: 0.06em;
+}
+
+/* ─── URGÊNCIA STRIP ─── */
+.urgency-strip {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--bg2);
+  padding: 0 48px;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+.urgency-item {
+  flex: 1;
+  padding: 36px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+}
+.urgency-item + .urgency-item {
+  border-left: 1px solid var(--line);
+  padding-left: 40px;
+  margin-left: 40px;
+}
+.urgency-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+}
+.urgency-num span { color: var(--accent); }
+.urgency-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ─── SECTIONS BASE ─── */
+section { position: relative; }
+.container { max-width: 1160px; margin: 0 auto; padding: 0 48px; }
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 72px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+.section-num {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.1;
+  color: var(--white);
+}
+.section-title em { font-style: italic; color: var(--accent); }
+
+/* ─── ATUAÇÃO ─── */
+.atuacao { padding: 100px 0; background: var(--bg); }
+
+.atuacao-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+}
+.atuacao-card {
+  padding: 40px 36px;
+  border-right: 1px solid var(--line);
+  position: relative;
+  transition: background 0.3s;
+}
+.atuacao-card:last-child { border-right: none; }
+.atuacao-card:nth-child(n+4) { border-top: 1px solid var(--line); }
+.atuacao-card:hover { background: var(--bg3); }
+
+.atuacao-index {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.atuacao-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: var(--white);
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+.atuacao-card p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.atuacao-accent {
+  position: absolute;
+  bottom: 36px;
+  right: 36px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.atuacao-card:hover .atuacao-accent { opacity: 1; }
+
+/* ─── COMO FUNCIONA ─── */
+.processo { padding: 100px 0; background: var(--bg2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+.processo-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+}
+.processo-steps::before {
+  content: '';
+  position: absolute;
+  top: 22px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--line2) 15%, var(--line2) 85%, transparent);
+}
+
+.passo {
+  padding: 0 28px 0 0;
+  position: relative;
+}
+.passo-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--bg2);
+  border: 1px solid var(--accent);
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+}
+.passo-num {
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.passo h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.passo p {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+/* ─── DIREITOS ─── */
+.direitos { padding: 100px 0; background: var(--bg); }
+
+.direitos-grid {
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  gap: 80px;
+  align-items: start;
+}
+.direitos-list { display: flex; flex-direction: column; gap: 0; }
+.direito-item {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 0 20px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+  transition: background 0.2s;
+}
+.direito-item:first-child { border-top: 1px solid var(--line); }
+.direito-n {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: 1.6rem;
+  color: var(--accent);
+  opacity: 0.5;
+  line-height: 1.2;
+  padding-top: 2px;
+}
+.direito-content h4 {
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+.direito-content p {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.direitos-aside { position: sticky; top: 100px; }
+
+.aside-alert {
+  background: var(--red-dim);
+  border: 1px solid rgba(168,50,50,0.25);
+  border-radius: 2px;
+  padding: 32px 28px;
+  margin-bottom: 20px;
+}
+.aside-alert-tag {
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.aside-alert-tag::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--red);
+  animation: blink 1.4s ease-in-out infinite;
+}
+@keyframes blink { 0%,100%{opacity:1}50%{opacity:0.15} }
+.aside-alert p {
+  font-size: 0.82rem;
+  color: #c98888;
+  line-height: 1.8;
+}
+
+.aside-quote {
+  background: var(--accent2);
+  border-left: 2px solid var(--accent);
+  padding: 24px 24px 24px 22px;
+}
+.aside-quote blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--mid);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.aside-quote cite {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* ─── EQUIPE ─── */
+.equipe { padding: 100px 0; background: var(--bg2); border-top: 1px solid var(--line); }
+
+.equipe-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+}
+.membro {
+  padding: 44px 40px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transition: background 0.3s;
+}
+.membro:nth-child(even) { border-right: none; }
+.membro:nth-last-child(-n+2) { border-bottom: none; }
+.membro:hover { background: var(--bg3); }
+
+.membro-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.membro-name {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 200;
+  font-size: 1.55rem;
+  letter-spacing: 0.06em;
+  color: var(--white);
+}
+.membro-oab {
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.membro-tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(200,169,110,0.25);
+  padding: 4px 10px;
+  border-radius: 1px;
+  margin-bottom: 20px;
+}
+.membro p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.85;
+}
+
+/* ─── REGIÕES ─── */
+.regioes { padding: 100px 0; background: var(--bg); border-top: 1px solid var(--line); }
+
+.regioes-wrap {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 80px;
+  align-items: start;
+}
+.regioes-intro p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.85;
+  margin-top: 24px;
+}
+
+.regioes-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.regiao-tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid);
+  border: 1px solid var(--line);
+  padding: 9px 16px;
+  border-radius: 1px;
+  transition: border-color 0.2s, color 0.2s;
+  cursor: default;
+}
+.regiao-tag:hover {
+  border-color: rgba(200,169,110,0.35);
+  color: var(--white);
+}
+
+/* ─── CTA FINAL ─── */
+.cta-final {
+  padding: 120px 0;
+  background: var(--bg2);
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+.cta-final-inner { max-width: 600px; margin: 0 auto; }
+.cta-pre {
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.cta-pre::before, .cta-pre::after {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--line2);
+}
+.cta-final h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+.cta-final h2 em { font-style: italic; color: var(--accent); }
+.cta-final p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 48px;
+  line-height: 1.8;
+}
+.cta-btns {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.cta-disclaimer {
+  margin-top: 28px;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  padding: 32px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-logo {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 200;
+  font-size: 0.88rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.footer-logo span { color: var(--accent); }
+footer p {
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+.footer-links { display: flex; gap: 24px; }
+.footer-links a {
+  font-size: 0.68rem;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--mid); }
+
+/* ─── FLOAT WPP ─── */
+.wpp-float {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 500;
+  width: 54px; height: 54px;
+  border-radius: 50%;
+  background: var(--wpp);
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 2px 24px rgba(37,211,102,0.28);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.wpp-float:hover { opacity: 0.88; transform: translateY(-2px); }
+
+/* ─── ANIMATIONS ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .topbar { padding: 13px 24px; }
+  .nav { display: none; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 80px 24px 60px; border-right: none; border-bottom: 1px solid var(--line); }
+  .hero-right { padding: 48px 24px 80px; }
+  .hero-right::before { display: none; }
+  .urgency-strip { padding: 0 24px; flex-direction: column; }
+  .urgency-item + .urgency-item { border-left: none; border-top: 1px solid var(--line); padding-left: 0; margin-left: 0; }
+  .container { padding: 0 24px; }
+  .atuacao-grid { grid-template-columns: 1fr; }
+  .atuacao-card { border-right: none; border-bottom: 1px solid var(--line); }
+  .atuacao-card:nth-child(n+4) { border-top: none; }
+  .processo-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .processo-steps::before { display: none; }
+  .direitos-grid { grid-template-columns: 1fr; gap: 48px; }
+  .direitos-aside { position: static; }
+  .equipe-grid { grid-template-columns: 1fr; }
+  .membro { border-right: none; }
+  .membro:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .membro:last-child { border-bottom: none; }
+  .regioes-wrap { grid-template-columns: 1fr; gap: 40px; }
+  footer { flex-direction: column; gap: 20px; padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="logo-wrap">
+    <span class="logo-moby">MOBY</span>
+    <div class="logo-sep"></div>
+    <span class="logo-branch">Criminal</span>
+  </div>
+  <nav class="nav">
+    <a href="#atuacao">Atuação</a>
+    <a href="#processo">Como funciona</a>
+    <a href="#equipe">Equipe</a>
+    <a href="#contato" class="nav-cta">Contato urgente</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Defesa Penal — São Paulo</div>
+    <h1>
+      A defesa<br>
+      começa no<br>
+      <em>primeiro<br>momento.</em>
+    </h1>
+    <p class="hero-desc">
+      O MOBY Criminal atua na defesa de pessoas presas em flagrante, acompanhamento em audiências de custódia e litígios penais complexos. Presença imediata nas delegacias de São Paulo.
+    </p>
+    <div class="hero-actions">
+      <a href="https://wa.me/5511970736325?text=Olá,%20preciso%20de%20atendimento%20criminal%20urgente." class="btn-wpp">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp — atendimento 24h
+      </a>
+      <a href="tel:+5511970736325" class="btn-tel">
+        Ligar agora
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-partners">
+      <div class="hero-partners-label">Equipe criminal</div>
+      <div class="partners-row">
+        <div class="partner-item">
+          <span class="partner-name">oliveira</span>
+          <span class="partner-role">penal · civil</span>
+        </div>
+        <div class="partner-item">
+          <span class="partner-name">bauch</span>
+          <span class="partner-role">contencioso</span>
+        </div>
+        <div class="partner-item">
+          <span class="partner-name">massi</span>
+          <span class="partner-role">consultivo</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-24h">
+      <div class="hero-24h-label">Disponibilidade</div>
+      <div class="hero-24h-value">24h</div>
+      <div class="hero-24h-sub">Inclusive fins de semana e feriados</div>
+    </div>
+  </div>
+</section>
+
+<!-- URGÊNCIA STRIP -->
+<div class="urgency-strip">
+  <div class="urgency-item">
+    <div class="urgency-num"><span>24</span>h</div>
+    <div class="urgency-label">Atendimento contínuo</div>
+  </div>
+  <div class="urgency-item">
+    <div class="urgency-num">+<span>10</span></div>
+    <div class="urgency-label">Anos de atuação penal</div>
+  </div>
+  <div class="urgency-item">
+    <div class="urgency-num"><span>SP</span></div>
+    <div class="urgency-label">Capital e Grande São Paulo</div>
+  </div>
+  <div class="urgency-item">
+    <div class="urgency-num"><span>OAB</span></div>
+    <div class="urgency-label">Registro ativo SP</div>
+  </div>
+</div>
+
+<!-- ATUAÇÃO -->
+<section class="atuacao" id="atuacao">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">01</span>
+      <h2 class="section-title">Áreas de <em>atuação</em></h2>
+    </div>
+    <div class="atuacao-grid reveal">
+      <div class="atuacao-card">
+        <div class="atuacao-index">01 — Urgência</div>
+        <h3>Prisão em flagrante</h3>
+        <p>Presença imediata na delegacia. Análise do auto de flagrante, entrevista reservada e atuação na audiência de custódia para buscar a liberdade desde o primeiro momento.</p>
+        <div class="atuacao-accent"></div>
+      </div>
+      <div class="atuacao-card">
+        <div class="atuacao-index">02 — Liberdade</div>
+        <h3>Habeas corpus e liberdade provisória</h3>
+        <p>Impetração de habeas corpus em qualquer grau. Pedidos de liberdade provisória, relaxamento de prisão ilegal e substituição por medidas cautelares.</p>
+        <div class="atuacao-accent"></div>
+      </div>
+      <div class="atuacao-card">
+        <div class="atuacao-index">03 — Processo</div>
+        <h3>Defesa técnica em juízo</h3>
+        <p>Acompanhamento completo de ações penais. Resposta à acusação, memoriais, alegações finais e recursos em todas as instâncias.</p>
+        <div class="atuacao-accent"></div>
+      </div>
+      <div class="atuacao-card">
+        <div class="atuacao-index">04 — Investigação</div>
+        <h3>Inquérito e fase policial</h3>
+        <p>Assistência desde a fase investigatória. Acompanhamento de depoimentos, acesso aos autos e estratégia de defesa pré-processual.</p>
+        <div class="atuacao-accent"></div>
+      </div>
+      <div class="atuacao-card">
+        <div class="atuacao-index">05 — Expostos</div>
+        <h3>Pessoas politicamente expostas</h3>
+        <p>Experiência consolidada na representação de executivos e pessoas politicamente expostas em questões penais e administrativas de alta complexidade.</p>
+        <div class="atuacao-accent"></div>
+      </div>
+      <div class="atuacao-card">
+        <div class="atuacao-index">06 — Execução</div>
+        <h3>Execução penal</h3>
+        <p>Acompanhamento da pena. Progressão de regime, livramento condicional, indulto e demais benefícios da execução.</p>
+        <div class="atuacao-accent"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="processo" id="processo">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Como <em>atuamos</em></h2>
+    </div>
+    <div class="processo-steps reveal">
+      <div class="passo">
+        <div class="passo-dot"></div>
+        <div class="passo-num">Passo 01</div>
+        <h3>Contato imediato</h3>
+        <p>Familiar ou o próprio cliente aciona via WhatsApp ou telefone. Atendemos a qualquer hora — inclusive madrugada e feriados.</p>
+      </div>
+      <div class="passo">
+        <div class="passo-dot"></div>
+        <div class="passo-num">Passo 02</div>
+        <h3>Ida à delegacia</h3>
+        <p>O advogado vai pessoalmente ao local, verifica o auto de flagrante e garante entrevista reservada antes de qualquer ato.</p>
+      </div>
+      <div class="passo">
+        <div class="passo-dot"></div>
+        <div class="passo-num">Passo 03</div>
+        <h3>Audiência de custódia</h3>
+        <p>Atuação na audiência de custódia — momento decisivo para questionar ilegalidades e pleitear a liberdade perante o juiz.</p>
+      </div>
+      <div class="passo">
+        <div class="passo-dot"></div>
+        <div class="passo-num">Passo 04</div>
+        <h3>Defesa contínua</h3>
+        <p>Construção da defesa técnica completa, do inquérito ao trânsito em julgado, com estratégia clara em cada etapa.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIREITOS -->
+<section class="direitos">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Seus <em>direitos</em></h2>
+    </div>
+    <div class="direitos-grid">
+      <div class="direitos-list reveal">
+        <div class="direito-item">
+          <div class="direito-n">I</div>
+          <div class="direito-content">
+            <h4>Direito ao silêncio</h4>
+            <p>Ninguém é obrigado a produzir prova contra si mesmo. Exercer esse direito não é culpa — é garantia constitucional.</p>
+          </div>
+        </div>
+        <div class="direito-item">
+          <div class="direito-n">II</div>
+          <div class="direito-content">
+            <h4>Entrevista reservada com advogado</h4>
+            <p>Garantida por lei antes de qualquer ato na delegacia. Nenhuma autoridade pode negar esse acesso.</p>
+          </div>
+        </div>
+        <div class="direito-item">
+          <div class="direito-n">III</div>
+          <div class="direito-content">
+            <h4>Lavratura do auto em 24h</h4>
+            <p>O auto de flagrante deve ser lavrado em até 24 horas. Vícios formais ou de fundo podem levar ao relaxamento imediato da prisão.</p>
+          </div>
+        </div>
+        <div class="direito-item">
+          <div class="direito-n">IV</div>
+          <div class="direito-content">
+            <h4>Audiência de custódia</h4>
+            <p>Direito constitucional de ser apresentado a um juiz em até 24 horas da prisão. Momento crítico para a defesa.</p>
+          </div>
+        </div>
+        <div class="direito-item">
+          <div class="direito-n">V</div>
+          <div class="direito-content">
+            <h4>Liberdade provisória ou fiança</h4>
+            <p>Muitos crimes admitem liberdade sem custódia. O advogado avalia o caso e identifica a melhor via para a soltura.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="direitos-aside reveal">
+        <div class="aside-alert">
+          <div class="aside-alert-tag">Atenção</div>
+          <p>Falar sem advogado durante o interrogatório é o erro mais custoso. Tudo declarado pode ser usado na acusação. As primeiras horas definem o rumo do processo — não as subestime.</p>
+        </div>
+        <div class="aside-quote">
+          <blockquote>"Ninguém será preso senão em flagrante delito ou por ordem escrita e fundamentada de autoridade judiciária competente."</blockquote>
+          <cite>Constituição Federal — Art. 5º, LXI</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPE -->
+<section class="equipe" id="equipe">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">04</span>
+      <h2 class="section-title">A <em>equipe</em></h2>
+    </div>
+    <div class="equipe-grid reveal">
+      <div class="membro">
+        <div class="membro-header">
+          <span class="membro-name">oliveira</span>
+          <span class="membro-oab">OAB/SP</span>
+        </div>
+        <div class="membro-tag">Penal · Civil</div>
+        <p>Formado pela PUC-SP, atuou em renomados escritórios de advocacia, representando empresas dos setores de infraestrutura, energia e financeiro, além de pessoas politicamente expostas em questões penais e administrativas. Atua com contencioso civil e penal, com expertise em litígios complexos e soluções jurídicas estratégicas.</p>
+      </div>
+      <div class="membro">
+        <div class="membro-header">
+          <span class="membro-name">bauch</span>
+          <span class="membro-oab">OAB/SP</span>
+        </div>
+        <div class="membro-tag">Contencioso</div>
+        <p>Formado pela USP em 2008, com passagem pelos escritórios Xavier Bernardes Bragança, De Lucca Derenusson Shuttof Azevedo Advogados e Motta Fernandes Advogados. Ampla experiência em litígios e defesa criminal.</p>
+      </div>
+      <div class="membro">
+        <div class="membro-header">
+          <span class="membro-name">massi</span>
+          <span class="membro-oab">OAB/SP</span>
+        </div>
+        <div class="membro-tag">Consultivo · Tech</div>
+        <p>Formado pela PUC-SP, trabalhou no unicórnio brasileiro Wildlife Studios e tornou-se diretor jurídico da Jungle. Atua na área consultiva com expertise em tecnologia, entretenimento e questões penais conexas ao setor.</p>
+      </div>
+      <div class="membro">
+        <div class="membro-header">
+          <span class="membro-name">finzetto</span>
+          <span class="membro-oab">OAB/SP</span>
+        </div>
+        <div class="membro-tag">Legislativo · Cultural</div>
+        <p>Consultor Legislativo do Senado Federal. Mestre em Estudos Culturais pela USP, graduado em Direito pela PUC-SP com intercâmbio na Universidade de Lisboa. Especialista em regulação e questões penais do setor criativo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGIÕES -->
+<section class="regioes">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-num">05</span>
+      <h2 class="section-title">Cobertura em <em>São Paulo</em></h2>
+    </div>
+    <div class="regioes-wrap">
+      <div class="regioes-intro reveal">
+        <p>Atendemos delegacias, fóruns e unidades prisionais em toda a capital paulista e Grande São Paulo. Presença física rápida onde a situação exigir.</p>
+      </div>
+      <div class="regioes-tags reveal">
+        <span class="regiao-tag">Sé · Centro</span>
+        <span class="regiao-tag">Pinheiros</span>
+        <span class="regiao-tag">Lapa</span>
+        <span class="regiao-tag">Santana</span>
+        <span class="regiao-tag">Tucuruvi</span>
+        <span class="regiao-tag">Tatuapé</span>
+        <span class="regiao-tag">Penha</span>
+        <span class="regiao-tag">Itaquera</span>
+        <span class="regiao-tag">São Mateus</span>
+        <span class="regiao-tag">Mooca</span>
+        <span class="regiao-tag">Ipiranga</span>
+        <span class="regiao-tag">Jabaquara</span>
+        <span class="regiao-tag">Campo Limpo</span>
+        <span class="regiao-tag">Capão Redondo</span>
+        <span class="regiao-tag">Vila Maria</span>
+        <span class="regiao-tag">Pirituba</span>
+        <span class="regiao-tag">Freguesia do Ó</span>
+        <span class="regiao-tag">Brás</span>
+        <span class="regiao-tag">Bom Retiro</span>
+        <span class="regiao-tag">Pompeia</span>
+        <span class="regiao-tag">Itaim Bibi</span>
+        <span class="regiao-tag">Santo André</span>
+        <span class="regiao-tag">São Bernardo</span>
+        <span class="regiao-tag">Guarulhos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final" id="contato">
+  <div class="container">
+    <div class="cta-final-inner reveal">
+      <div class="cta-pre">Contato urgente</div>
+      <h2>Cada hora<br><em>é decisiva.</em></h2>
+      <p>Entre em contato agora. Respondemos em minutos, a qualquer hora do dia ou da noite. Sigilo absoluto e atendimento humanizado desde o primeiro contato.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/5511970736325?text=Olá,%20preciso%20de%20atendimento%20criminal%20urgente%20em%20São%20Paulo." class="btn-wpp">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp — 24h
+        </a>
+        <a href="tel:+5511970736325" class="btn-tel">Ligar agora</a>
+      </div>
+      <div class="cta-disclaimer">Sigilo garantido · Sem compromisso · Resposta em minutos</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">MOBY <span>Criminal</span></div>
+  <p>© 2025 MOBY Advogados — OAB/SP · São Paulo</p>
+  <div class="footer-links">
+    <a href="https://mobyadvogados.com">mobyadvogados.com</a>
+    <a href="#">Privacidade</a>
+  </div>
+</footer>
+
+<!-- FLOAT WPP -->
+<a href="https://wa.me/5511970736325?text=Olá,%20preciso%20de%20atendimento%20criminal%20urgente." class="wpp-float">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
