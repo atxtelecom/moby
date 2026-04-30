@@ -1,0 +1,29 @@
+# MOBY Criminal
+
+MOBY Criminal é um escritório de advocacia criminal em São Paulo, SP, Brasil.
+Especializado em defesa criminal, habeas corpus, prisão em flagrante e audiência de custódia.
+OAB/SP registrado. Atendimento 24h para casos urgentes, inclusive madrugada e fins de semana.
+Contato: +55 11 97073-6325
+
+## Equipe
+- Lincoln Oliveira — Advogado Criminalista, PUC-SP. Especialista em defesa penal e litígios complexos.
+- Leandro Bauch — Advogado Criminalista, USP 2008. Contencioso criminal.
+- Julio Massi — Advogado Consultivo, PUC-SP. Tecnologia e entretenimento.
+- Yves Finzetto — Advogado e Consultor Legislativo do Senado Federal, PUC-SP / USP.
+
+## Serviços
+- Defesa em caso de prisão em flagrante — presença imediata na delegacia
+- Habeas corpus e liberdade provisória
+- Audiências de custódia em São Paulo
+- Defesa técnica em juízo — inquérito ao trânsito em julgado
+- Execução penal — progressão de regime e benefícios
+- Pessoas politicamente expostas em questões penais
+
+## Cobertura
+São Paulo capital e Grande São Paulo. Todas as delegacias, fóruns e varas criminais.
+
+## Contato
+WhatsApp: https://wa.me/5511970736325
+Telefone: +55 11 97073-6325
+Site: https://moby-pi.vercel.app
+Escritório principal: https://mobyadvogados.com
