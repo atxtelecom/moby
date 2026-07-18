@@ -4,17 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18128648028"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-18128648028');
-  </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18128648028"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18128648028');
+</script>
+
+<!-- Event snippet for Contato conversion page -->
+<script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18128648028/9d5-CF64q6UcENzutMRD',
+      'event_callback': callback
+    });
+    return false;
+  }
+</script>
+
 <!-- ─── SEO BÁSICO ─── -->
 <title>Advogado Criminal em São Paulo | MOBY Criminal</title>
-<meta name="description" content="Defesa criminal em São Paulo com atendimento imediato. MOBY Criminal protege seus direitos desde o primeiro momento — prisão, inquérito ou processo. Fale agora.">
+<meta name="description" content="Preso em flagrante em SP? Atendimento 24h em delegacias. Especialistas em audiência de custódia e habeas corpus. Ligue agora: (11) 97073-6325.">
 <link rel="canonical" href="https://moby-pi.vercel.app/">
 
 <!-- ─── OPEN GRAPH / WHATSAPP PREVIEW ─── -->
@@ -113,7 +130,7 @@
       "about": {"@id": "https://moby-pi.vercel.app/#organization"},
       "inLanguage": "pt-BR",
       "datePublished": "2025-01-01",
-      "dateModified": "2026-04-29"
+      "dateModified": "2026-07-17"
     }
   ]
 }
@@ -315,8 +332,6 @@ body::before {
 }
 .nav a:hover { color: var(--white); }
 
-/* nav-cta styles moved to nav .nav-cta below */
-
 /* ─── HERO ─── */
 .hero {
   min-height: 96vh;
@@ -343,7 +358,6 @@ body::before {
   position: relative;
 }
 
-/* vertical rule decoration */
 .hero-right::before {
   content: '';
   position: absolute;
@@ -440,7 +454,6 @@ body::before {
 }
 .btn-tel:hover { border-color: var(--line2); color: var(--white); }
 
-/* right col */
 .hero-partners {
   margin-bottom: auto;
   padding-top: 40px;
@@ -984,7 +997,7 @@ footer p {
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   .topbar { padding: 13px 20px; }
-    .topbar-cta-mobile { display: flex; }
+  .topbar-cta-mobile { display: flex; }
   .nav {
     display: none;
     position: fixed;
@@ -1064,7 +1077,6 @@ a:focus-visible, button:focus-visible {
   display: none;
 }
 
-/* ─── NAV-CTA sem !important ─── */
 nav .nav-cta {
   font-size: 0.7rem;
   font-weight: 400;
@@ -1079,36 +1091,55 @@ nav .nav-cta:hover {
   color: var(--accent);
 }
 
-</style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18128648028"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18128648028');
-</script>
+/* ─── BARRA FIXA MOBILE ─── */
+.mobile-cta-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 600;
+  background: rgba(12,12,11,0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--line);
+  padding: 10px 16px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.mobile-cta-bar .mc-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 8px;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: 'Outfit', sans-serif;
+  transition: opacity 0.2s;
+}
+.mobile-cta-bar .mc-btn:hover { opacity: 0.85; }
+.mobile-cta-bar .mc-wpp {
+  background: var(--wpp);
+  color: #fff;
+}
+.mobile-cta-bar .mc-tel {
+  border: 1px solid var(--line2);
+  color: var(--mid);
+}
+.mobile-cta-bar .mc-tel:hover { border-color: var(--white); color: var(--white); }
 
-  <!-- Rastreamento de conversão WhatsApp -->
-  <!-- Rastreamento de conversão WhatsApp - Google Ads -->
-  <script>
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-        'send_to': 'AW-18128648028/9d5-CF64q6UcENzutMRD',
-        'event_callback': callback
-      });
-      return false;
-    }
-    // Alias para compatibilidade com onclick existente
-    function rastrearWhatsApp() {
-      gtag_report_conversion();
-    }
-  </script>
+@media (max-width: 768px) {
+  .mobile-cta-bar { display: flex; }
+  .wpp-float { bottom: 85px; }
+}
+
+</style>
 </head>
 <body>
 
@@ -1120,7 +1151,7 @@ nav .nav-cta:hover {
     <span class="logo-branch">Criminal</span>
   </div>
   <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
-  <a onclick="rastrearWhatsApp()" href="https://wa.me/5511987448884?text=Ol%C3%A1,%20preciso%20de%20atendimento%20criminal%20urgente." onclick="rastrearWhatsApp()" class="topbar-cta-mobile" aria-label="WhatsApp 24h">WPP 24h</a>
+  <a onclick="return gtag_report_conversion('https://wa.me/5511987448884?text=Ol%C3%A1,%20preciso%20de%20atendimento%20criminal%20urgente.');" href="https://wa.me/5511987448884?text=Ol%C3%A1,%20preciso%20de%20atendimento%20criminal%20urgente." class="topbar-cta-mobile" aria-label="WhatsApp 24h">WPP 24h</a>
   <nav class="nav" id="main-nav">
     <a href="#atuacao">Atuação</a>
     <a href="#processo">Como funciona</a>
@@ -1134,15 +1165,15 @@ nav .nav-cta:hover {
   <div class="hero-left">
     <p class="hero-eyebrow">Advogado Criminal em São Paulo</p>
     <h1>
-      A defesa<br>
-      começa no<br>
-      <em>primeiro<br>momento.</em>
+      Preso em flagrante?<br>
+      Nós vamos até a<br>
+      <em>delegacia agora.</em>
     </h1>
     <p class="hero-desc">
-      O MOBY Criminal atua na defesa de pessoas presas em flagrante, acompanhamento em audiências de custódia e litígios penais complexos. Presença imediata nas delegacias de São Paulo.
+      Atendimento 24h em delegacias de São Paulo. Especialistas em audiência de custódia, habeas corpus e liberdade provisória. Não fale sem advogado — cada hora é decisiva.
     </p>
     <div class="hero-actions">
-      <a onclick="rastrearWhatsApp()" href="https://wa.me/5511987448884?text=Olá,%20preciso%20de%20atendimento%20criminal%20urgente." class="btn-wpp">
+      <a onclick="return gtag_report_conversion('https://wa.me/5511987448884?text=Ol%C3%A1,%20preciso%20de%20atendimento%20criminal%20urgente.');" href="https://wa.me/5511987448884?text=Ol%C3%A1,%20preciso%20de%20atendimento%20criminal%20urgente." class="btn-wpp">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         WhatsApp — atendimento 24h
       </a>
@@ -1480,7 +1511,7 @@ nav .nav-cta:hover {
       <h2>Cada hora<br><em>é decisiva.</em></h2>
       <p>Entre em contato agora. Respondemos em minutos, a qualquer hora do dia ou da noite. Sigilo absoluto e atendimento humanizado desde o primeiro contato.</p>
       <div class="cta-btns">
-        <a onclick="rastrearWhatsApp()" href="https://wa.me/5511987448884?text=Olá,%20preciso%20de%20atendimento%20criminal%20urgente%20em%20São%20Paulo." class="btn-wpp">
+        <a onclick="return gtag_report_conversion('https://wa.me/5511987448884?text=Ol%C3%A1,%20preciso%20de%20atendimento%20criminal%20urgente%20em%20S%C3%A3o%20Paulo.');" href="https://wa.me/5511987448884?text=Ol%C3%A1,%20preciso%20de%20atendimento%20criminal%20urgente%20em%20S%C3%A3o%20Paulo." class="btn-wpp">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           WhatsApp — 24h
         </a>
@@ -1502,9 +1533,21 @@ nav .nav-cta:hover {
 </footer>
 
 <!-- FLOAT WPP -->
-<a onclick="rastrearWhatsApp()" href="https://wa.me/5511987448884?text=Olá,%20preciso%20de%20atendimento%20criminal%20urgente." class="wpp-float">
+<a onclick="return gtag_report_conversion('https://wa.me/5511987448884?text=Ol%C3%A1,%20preciso%20de%20atendimento%20criminal%20urgente.');" href="https://wa.me/5511987448884?text=Ol%C3%A1,%20preciso%20de%20atendimento%20criminal%20urgente." class="wpp-float">
   <svg width="24" height="24" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
+
+<!-- BARRA FIXA MOBILE -->
+<div class="mobile-cta-bar">
+  <a onclick="return gtag_report_conversion('https://wa.me/5511987448884?text=Ol%C3%A1,%20preciso%20de%20atendimento%20criminal%20urgente.');" href="https://wa.me/5511987448884?text=Ol%C3%A1,%20preciso%20de%20atendimento%20criminal%20urgente." class="mc-btn mc-wpp">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+  <a href="tel:+5511987448884" class="mc-btn mc-tel">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.66A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.09a16 16 0 006 6l.36-.36a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+    Ligar
+  </a>
+</div>
 
 <script>
 document.documentElement.classList.add('js-loaded');
@@ -1526,7 +1569,6 @@ if (toggle && nav) {
     nav.classList.toggle('nav-open', open);
     toggle.setAttribute('aria-expanded', open);
   });
-  // Close on link click
   nav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       toggle.classList.remove('open');
